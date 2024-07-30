@@ -1,8 +1,11 @@
 import pandas as pd
 import os
 
+# combine new month to team.csv
+
 month = "06"
-target_file = "./data/data.csv"
+target_file = "team.csv"
+
 # if file exists, load it
 if os.path.exists(target_file):
     target_df = pd.read_csv(target_file, sep=';', encoding='utf-8') 
@@ -15,7 +18,6 @@ print(f"Month: {month}")
 df = pd.read_csv(f"./data/2024.{month}.csv", sep=';', encoding='utf-8')
 
 df['Month'] = month
-# df['Description'] = df['Short description'] + ' ' + df['Comment']
 
 print(df)
 
